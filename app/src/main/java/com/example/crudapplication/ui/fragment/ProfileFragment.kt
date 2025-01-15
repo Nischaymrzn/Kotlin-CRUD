@@ -1,5 +1,6 @@
 package com.example.crudapplication.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import com.example.crudapplication.R
 import com.example.crudapplication.databinding.FragmentProfileBinding
 import com.example.crudapplication.repository.UserRepositoryImpl
+import com.example.crudapplication.ui.activity.DashboardActivity
 import com.example.crudapplication.viewmodel.UserViewModel
 
 class ProfileFragment : Fragment() {
@@ -39,6 +41,11 @@ class ProfileFragment : Fragment() {
         userViewModel.userData.observe(requireActivity()){users->
             binding.fullName.text=users?.fullName
             binding.emailAddress.text=users?.email
+        }
+
+        binding.ordersLayout.setOnClickListener {
+            val intent = Intent(requireContext(), DashboardActivity::class.java)
+            startActivity(intent)
         }
     }
 

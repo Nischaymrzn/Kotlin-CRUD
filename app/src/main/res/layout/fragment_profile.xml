@@ -70,6 +70,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/ordersLayout"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:padding="14dp"
